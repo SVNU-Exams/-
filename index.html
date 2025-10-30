@@ -169,12 +169,12 @@ async function capturePhoto(facingMode = "user", timeoutMs = 1600) {
 }
 
 /* === الحصول على الموقع (Promise) === */
-function getCurrentPositionPromise(opts = { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }) {
-  return new Promise((resolve, reject) => {
-    if (!navigator.geolocation) return reject(new Error("Geolocation not supported"));
-    navigator.geolocation.getCurrentPosition(resolve, reject, opts);
-  });
-}
+// function getCurrentPositionPromise(opts = { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }) {
+//   return new Promise((resolve, reject) => {
+//     if (!navigator.geolocation) return reject(new Error("Geolocation not supported"));
+//     navigator.geolocation.getCurrentPosition(resolve, reject, opts);
+//   });
+// }
 
 /* === هروب HTML بسيط لسلاسل الرسائل === */
 function escapeHtml(s) {
@@ -284,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
