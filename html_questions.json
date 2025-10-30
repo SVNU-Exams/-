@@ -1,0 +1,122 @@
+[
+  {
+    "title": "What is the main function of the CPU in a computer?",
+    "answer_1": "To store data permanently",
+    "answer_2": "To process instructions and perform calculations",
+    "answer_3": "To display information on the screen",
+    "answer_4": "To provide internet connection",
+    "right_answer": "To process instructions and perform calculations"
+  },
+  {
+    "title": "Which of the following is NOT a hardware component?",
+    "answer_1": "Keyboard",
+    "answer_2": "Monitor",
+    "answer_3": "Operating System",
+    "answer_4": "Hard Disk",
+    "right_answer": "Operating System"
+  },
+  {
+    "title": "What does RAM stand for?",
+    "answer_1": "Read Access Memory",
+    "answer_2": "Random Access Memory",
+    "answer_3": "Run All Memory",
+    "answer_4": "Real Application Memory",
+    "right_answer": "Random Access Memory"
+  },
+  {
+    "title": "Which part of the computer performs arithmetic and logic operations?",
+    "answer_1": "Control Unit",
+    "answer_2": "ALU (Arithmetic Logic Unit)",
+    "answer_3": "Memory Unit",
+    "answer_4": "I/O Devices",
+    "right_answer": "ALU (Arithmetic Logic Unit)"
+  },
+  {
+    "title": "Which of the following is an example of system software?",
+    "answer_1": "Microsoft Word",
+    "answer_2": "Adobe Photoshop",
+    "answer_3": "Windows 11",
+    "answer_4": "Google Chrome",
+    "right_answer": "Windows 11"
+  },
+  {
+    "title": "What does the term 'hardware' refer to?",
+    "answer_1": "The programs that run on a computer",
+    "answer_2": "The physical parts of a computer system",
+    "answer_3": "The people who use computers",
+    "answer_4": "The internet connection",
+    "right_answer": "The physical parts of a computer system"
+  },
+  {
+    "title": "Which device is used for long-term data storage?",
+    "answer_1": "RAM",
+    "answer_2": "CPU",
+    "answer_3": "Hard Drive (HDD)",
+    "answer_4": "Cache Memory",
+    "right_answer": "Hard Drive (HDD)"
+  },
+  {
+    "title": "Which of these is an input device?",
+    "answer_1": "Printer",
+    "answer_2": "Mouse",
+    "answer_3": "Speaker",
+    "answer_4": "Monitor",
+    "right_answer": "Mouse"
+  },
+  {
+    "title": "What is the function of an operating system?",
+    "answer_1": "To connect to the internet",
+    "answer_2": "To manage hardware and software resources",
+    "answer_3": "To store all files permanently",
+    "answer_4": "To design web pages",
+    "right_answer": "To manage hardware and software resources"
+  },
+  {
+    "title": "Which memory is known as ‘volatile memory’?",
+    "answer_1": "ROM",
+    "answer_2": "RAM",
+    "answer_3": "Hard Disk",
+    "answer_4": "Flash Drive",
+    "right_answer": "RAM"
+  },
+  {
+    "title": "Which component is responsible for displaying output on the screen?",
+    "answer_1": "Monitor",
+    "answer_2": "Keyboard",
+    "answer_3": "Processor",
+    "answer_4": "Mouse",
+    "right_answer": "Monitor"
+  },
+  {
+    "title": "Software that performs specific tasks like writing a document or editing an image is called:",
+    "answer_1": "Application Software",
+    "answer_2": "System Software",
+    "answer_3": "Firmware",
+    "answer_4": "Driver Software",
+    "right_answer": "Application Software"
+  },
+  {
+    "title": "Which of the following is NOT an example of storage device?",
+    "answer_1": "CD-ROM",
+    "answer_2": "Hard Disk",
+    "answer_3": "RAM",
+    "answer_4": "USB Flash Drive",
+    "right_answer": "RAM"
+  },
+  {
+    "title": "What does BIOS stand for?",
+    "answer_1": "Basic Input Output System",
+    "answer_2": "Binary Input Output Software",
+    "answer_3": "Basic Integrated Operating System",
+    "answer_4": "Binary Integrated Output System",
+    "right_answer": "Basic Input Output System"
+  },
+  {
+    "title": "Which unit controls and coordinates all activities of the computer?",
+    "answer_1": "Memory Unit",
+    "answer_2": "Control Unit",
+    "answer_3": "ALU",
+    "answer_4": "Cache",
+    "right_answer": "Control Unit"
+  }
+]
